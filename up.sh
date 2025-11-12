@@ -33,14 +33,14 @@ openssl rand -hex 32 &> p2p-node-key.txt
 # Bring up L2.
 (
   echo "Bringing up L2..."
-  docker-compose -f docker-compose.yml up -d l2
+  docker compose -f docker compose.yml up -d l2
   wait_up $L2_URL
 )
 
 # Bring up everything else.
 (
   echo "Bringing up L2 services..."
-  docker-compose up -d op-node
+  docker compose up -d op-node
 )
 
 echo "L2 ready."
